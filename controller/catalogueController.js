@@ -15,6 +15,17 @@ exports.list_all_departaments = function(req, res) {
         res.send(departament);
     });
 };
+
+exports.list_all_departaments_by_group = function(req, res) {
+    Departament.getAllDepartamentsGroup(function(err, departament) {
+        console.log('controller')
+        if (err)
+            res.send(err);
+        console.log('res', departament);
+        res.send(departament);
+    });
+};
+
 exports.read_a_departament = function(req, res) {
     Departament.getDepartamentsById(req.params.departamentId, function(err, task) {
         if (err)

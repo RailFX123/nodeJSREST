@@ -56,14 +56,14 @@ User.createUser = function(userNew, result) {
                             console.log("error: ", err);
                             result(err, null);
                         } else {
-                            sql.query("INSERT INTO `analisis`.`tb_trabajador` (`Persona_Id_FK`, `TipoTrabajo_Id_FK`) VALUES (?, ?)", [id_usuario, newUser.tipoTrabajo], function(err, res) {
-                                if (err) {
-                                    console.log("error: ", err);
-                                    result(err, null);
-                                } else {
-                                    result(null, { status: "200", message: "OK" });
-                                }
-                            });
+                            // sql.query("INSERT INTO `analisis`.`tb_trabajador` (`Persona_Id_FK`, `TipoTrabajo_Id_FK`) VALUES (?, ?)", [id_usuario, newUser.tipoTrabajo], function(err, res) {
+                            //     if (err) {
+                            //         console.log("error: ", err);
+                            //         result(err, null);
+                            //     } else {
+                            result(null, { status: "200", message: "OK" });
+                            //     }
+                            // });
                         }
                     });
                 }
