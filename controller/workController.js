@@ -54,3 +54,18 @@ exports.read_userInfo_By_Id = function(req, res) {
         res.json(task);
     });
 };
+exports.read_progress_works_By_ID = function(req, res) {
+    Work.getUserInfoById(req.params.Persona_Id, function(err, task) {
+        if (err)
+            res.send(err);
+        res.json(task);
+    });
+};
+
+exports.update_a_Work = function(req, res) {
+    Work.ActualizarEstadoTrabajo(req.params.Publicacion_Id, req.params.Estado_Id, function(err, task) {
+        if (err)
+            res.send(err);
+        res.json(task);
+    });
+};

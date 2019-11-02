@@ -64,9 +64,12 @@ module.exports = function(app) {
     app.route('/publicaciones/realizadas/usuario/:Persona_Id')
         .get(publicaciones.read_userInfo_By_Id);
 
-    app.route('/publicaciones/realizadas/usuario/:Persona_Id')
+    app.route('/publicaciones/encurso/usuario/:Persona_Id')
         .get(publicaciones.read_userInfo_By_Id);
 
     app.route('/publicaciones/estado/usuario/:Publicaciones_Id')
         .get(publicaciones.read_userInfo_By_Id);
+
+    app.route('/publicaciones/aplicar/:Publicacion_Id/:Estado_Id')
+        .put(publicaciones.update_a_Work)
 };
